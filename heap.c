@@ -6,7 +6,7 @@ void *alloc(void *data, size_t size, Heap *h)
 {
     if(!h || !h->memory) return NULL;
 
-    if (h->ptr + size > h->total_size) return NULL;
+    if (h->ptr + size > h->total_size) return NULL;//ptr is already offset by one
 
     void *adresse = (void *) &h->memory[h->ptr];
 

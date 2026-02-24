@@ -185,11 +185,13 @@ int print_list(Linked_list *l)
 
     while (1)
     {
-        print_data_struct(current->data_struct);
+        int e = print_data_struct(current->data_struct); if(e) return -2;
 
         if ( ++i >= l->count ) break; 
 
         current = current->next;
+
+        if (!current || current->data_struct) return -2;
     }
 
     printf("\n");
